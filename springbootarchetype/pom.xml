@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.maoding</groupId>
+    <artifactId>maoding-spring-boot</artifactId>
+    <version>v1.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>app</module>
+        <module>core</module>
+    </modules>
+
+    <!-- 版本定义-->
+    <properties>
+        <!-- spring boot -->
+        <spring-boot.version>1.5.9.RELEASE</spring-boot.version>
+        <spring.version>4.3.13.RELEASE</spring.version>
+        <!-- jdk -->
+        <java.version>1.8</java.version>
+        <!-- project info -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- 依赖库 -->
+    <dependencies>
+        <!-- spring boot -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <version>${spring-boot.version}</version>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+
+    <!-- 编译插件版本定义 -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- 依赖库的下载地址 -->
+    <repositories>
+        <repository>
+            <id>maoding_nexus</id>
+            <name>Maoding Nexus</name>
+            <url>http://192.168.1.253:8081/repository/maven-public</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>public_nexus</id>
+            <name>Public Repositories</name>
+            <url>https://repository.sonatype.org/service/local/repositories/atlassian/content</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>zero_nexus</id>
+            <name>ZeroC Repositories</name>
+            <url>https://repo.zeroc.com/nexus/service/local/repositories/central/content</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <!-- 插件的下载地址 -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maoding_plugins</id>
+            <name>Maoding Plugins</name>
+            <url>http://192.168.1.253:8081/repository/maven-public</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>public_plugins</id>
+            <name>Public Plugins</name>
+            <url>https://repository.sonatype.org/service/local/repositories/apache-staging/content</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>zero_plugins</id>
+            <name>ZeroC Plugins</name>
+            <url>https://repo.zeroc.com/nexus/service/local/repositories/releases/content</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+</project>
